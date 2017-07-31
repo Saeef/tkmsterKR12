@@ -128,33 +128,8 @@
                             }
 
                         var retrievedData = getCookie("Mileage_Calculator_Values");
-                        //var previousValues = JSON.parse(retrievedData);
-                        var previousValues = retrievedData;
+                        var previousValues = retrievedData || undefined;
                             
-                            if(previousValues !== null){
-                                var _01 = previousValues[0],
-                                    _02 = previousValues[1],
-                                    _03 = previousValues[2];
-                                // console.log(previousValues);
-                                if(_01 !== 0 ){ 
-                                    document.getElementById('mileage01').value = _01;
-                                }
-                                if(_02 !== 0 ){ 
-                                    document.getElementById('mileage02').value = _02;
-                                }
-                                if(_03 !== 0 ){ 
-                                    document.getElementById('mileage03').value = _03;
-                                }
-                                CTM_05.popup.calculate(_01, _02, _03);
-                            } 
-
-
-
-
-
-
-
-
 
                 } else {
                     fs(window.TEMPORARY, 100,
@@ -182,12 +157,6 @@
                             }
 
 
-
-
-
-
-
-
                        }, function(err) {
                           console.log('incognito');
                        }
@@ -199,8 +168,6 @@
                 
             },
             setLocalStorage: function(_01, _02, _03){
-
-
 
                 var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
                 if (!fs) {
@@ -214,73 +181,81 @@
                       if (parts.length == 2) return parts.pop().split(";").shift();
                     }
 
-
-
                    //separate latevarr
                    var values = (_01 + ',' + _02 + ',' + _03);
 
-                    
-                    //document.cookie = 'Mileage_Calculator_Values = ' +  JSON.stringify(values);
                      document.cookie = 'Mileage_Calculator_Values = ' +  values + ";";
-                    debugger;
-                    //localStorage.setItem("Mileage_Calculator_Values", JSON.stringify(values));
 
 
                 } else {
                     fs(window.TEMPORARY, 100,
                        function(fs) {
                           console.log('normal');
-
                             var values = [_01, _02, _03];
                             localStorage.setItem("Mileage_Calculator_Values", JSON.stringify(values));
-
-
 
                        }, function(err) {
                           console.log('incognito');
                        }
                     );
                 };
-
-
-
-                
-              
-                
+     
                 
             },
             bindEvents: function(){
                 $(document).on('click', '#loadingOverlay .closee, #calculator-popp .blockOverlay', function(event) {
                     event.preventDefault();
-
                     CTM_05.popup.closePopup();
                 });
 
                 $(document).on('keypress keyup keydown', '#calculator-tool input.input-number', function(event) { 
                     var _01 = document.getElementById('mileage01').value;
-                    debugger;
+                    
+                    var cookieString1,cookieString2,cookieString3,expireDate;               
                     if(_01 != undefined) {
-                            document.cookie = '_01 = ' + _01.value;
+                            console.log(1);
+                            cookieString1 = '_01=';
+                            expireDate = new Date();
+                            //set-to-past
+                            expireDate.setTime(expireDate.getTime() - 86400 * 1000);
+                            cookieString1 += ';max-age=0';
+                            cookieString1 += ';expires=' + expireDate.toUTCString();
+                            document.cookie = cookieString1;
+                            //set new value
+                            document.cookie = '_01 = ' + _01;
                    
                     }
-
 
                     var _02 = document.getElementById('mileage02').value;
 
                         if(_02 != undefined) {
-                            document.cookie = '_02 = ' + _02.value;
-                       
+                            //cookieString2 = '_02';
+                            expireDate = new Date();
+                            //set-to-past
+                            expireDate.setTime(expireDate.getTime() - 86400 * 1000);
+                            cookieString2 += ';max-age=0';
+                            cookieString2 += ';expires=' + expireDate.toUTCString();
+                            document.cookie = cookieString2;
+                            //set new value
+                            document.cookie = '_02 = ' + _02;
+                            console.log(2);
                         }
                     
                     var _03 = document.getElementById('mileage03').value;
 
-                         if(_03 != undefined) {
-                                document.cookie = '_03 = ' + _03.value;
+                        if(_03 != undefined) {
+                            //cookieString3 = '_03';
+                            expireDate = new Date();
+                            //set-to-past
+                            expireDate.setTime(expireDate.getTime() - 86400 * 1000);
+                            cookieString3 += ';max-age=0';
+                            cookieString3 += ';expires=' + expireDate.toUTCString();
+                            document.cookie = cookieString3;
+                            //set new value
+                            document.cookie = '_03 = ' + _03;
+                            console.log(3);
                        
                         }
-
-
-                    
 
                     if(_01 === '' ){ _01 = 0; }
                     if(_02 === '' ){ _02 = 0; }
@@ -298,7 +273,6 @@
 
                 $(document).on('click', '#add_mileage-cta', function(event) {
                     event.preventDefault();
-
                     var _01 = document.getElementById('mileage01'),
                         _02 = document.getElementById('mileage02'),
                         _03 = document.getElementById('mileage03'),
@@ -355,21 +329,21 @@
     };
 
     (function pollForjQuery() {
-        //if (window.jQuery !== undefined) {
-            //if(document.getElementById('annual-mileage') !== null || document.getElementById('current-value-wrapper') !== null){
-                //if(document.getElementById('calculator-helper') === null){
-                    //try {
+        if (window.jQuery !== undefined) {
+            if(document.getElementById('annual-mileage') !== null || document.getElementById('current-value-wrapper') !== null){
+                if(document.getElementById('calculator-helper') === null){
+                    try {
                         CTM_05.init();      
-                    //} catch (err) {
-                        //console.log('ERROR: ' + err);
-                    //}
-               // }
-           // } else {
-               // setTimeout(pollForjQuery, 25);
-           // }
-       // } else {
-            //setTimeout(pollForjQuery, 25);
-        //}
+                    } catch (err) {
+                        console.log('ERROR: ' + err);
+                    }
+                }
+            } else {
+                setTimeout(pollForjQuery, 25);
+            }
+        } else {
+            setTimeout(pollForjQuery, 25);
+        }
     })();
 
   
