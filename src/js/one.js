@@ -51,7 +51,7 @@
             if(secErr) {
                secErr.innerHTML = '';
                secErr.id = 'notiks';
-               secErr.innerHTML = ' <div class="notikswrapper"><div class="notiksheader"><h3>Tickets Unavailable</h3><h4>We can still get you in..</h4></div><div class="notiksrow uno"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="View Other Dates" /><p>These are regular tickets available for this event on another date.</p><a href="' + l1.href + '" target="_blank" title="View Other Dates"><button id="notiksbone" type="button">View Other Dates &rsaquo;</button></a></div><div class="notiksrow dos"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="View Platinum Tickets" /><p>Platinum tickets are available, giving you access to in demand tickets for this show.<br/><span id="platmin">Tickets from £120.00</span></p><a href="' + l2 + '" target="_blank" title="View Platinum Tickets"><button id="notiksbtwo" type="button">View Platinum Tickets &rsaquo;</button></a></div><div class="notiksrow tres"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="View Resale Tickets" /><p>There are resale tickets available through our Official Resale Marketplace: Seatwave.<br /><span id="resmin">Tickets from £100.00</span></p><a href="' + l3 +'" target="_blank" title="View Resale Tickets"><button id="notiksbthree" type="button">View Resale Tickets</button></a></div></div>  ';
+               secErr.innerHTML = ' <div class="notikswrapper"><div class="notiksheader"><h3>'+ this.translations.title.en + '</h3><h4>'+ this.translations.subtitle.en +'</h4></div><div class="notiksrow uno"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="'+ this.translations.copy2.en +'" /><p>'+ this.translations.copy1.en  +'</p><a href="' + l1.href + '" target="_blank" title="View Other Dates"><button id="notiksbone" type="button">'+ this.translations.copy2.en +' &rsaquo;</button></a></div><div class="notiksrow dos"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="' + this.translations.cta1.en + '" /><p>' + this.translations.copy4.en + '<br/><span id="platmin">Tickets from £120.00</span></p><a href="' + l2 + '" target="_blank" title="' + this.translations.cta1.en + '"><button id="notiksbtwo" type="button">' + this.translations.cta1.en + ' &rsaquo;</button></a></div><div class="notiksrow tres"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="' + this.translations.cta3.en +'" /><p>' + this.translations.copy3.en +'<br /><span id="resmin">Tickets from £100.00</span></p><a href="' + l3 +'" target="_blank" title="' + this.translations.cta3.en +'"><button id="notiksbthree" type="button">' + this.translations.cta3.en +'</button></a></div></div>  ';
                //add-uno
                uno = document.querySelector('.notiksrow.uno');
                uno.classList.add('isOn');
@@ -88,12 +88,97 @@
 
       },//manyErrors
 
-      translations = {
+      translations: {
+         title: {
 
+            en: 'Tickets Unavailable',
+            nl: 'Helaas, er zijn geen tickets meer beschikbaar.' 
 
+         },
 
+         subtitle: {
 
-      }
+            en: 'We can still get you in...',
+            nl: 'We kunnen je nog steeds aan tickets helpen!' 
+
+         },
+
+         copy1: {
+
+            en: 'These are regular tickets available for this event on another date.',
+            nl: 'xxxxxxxxxxxxxxxxxx' 
+
+         },
+
+         cta1: {
+
+            en: 'View Platinum Tickets',
+            nl: 'Bekijk Platinum Tickets' 
+
+         },
+
+         copy2: {
+
+            en: 'View Other Dates',
+            nl: 'Bekijk Andere Datum ' 
+
+         },
+
+         cta2: {
+
+            en: 'We can still get you in...',
+            nl: 'We kunnen je nog steeds aan tickets helpen!' 
+
+         },
+
+         copy3: {
+
+            en: 'There are resale tickets available through our Official Resale Marketplace: Seatwave',
+            nl: 'Er zijn tweedehands tickets beschikbaar op ons officiële marktplaats Seatwave.' 
+
+         },
+
+         cta3: {
+
+            en: 'View Resale Tickets',
+            nl: 'Bekijk Seatwave Tickets' 
+
+         },
+
+         cta4: {
+
+            en: 'Continue to Platinum',
+            nl: 'Ga naar Platinum Tickets  ' 
+
+         },
+
+         copy4: {
+
+            en: 'Platinum tickets are available, giving you access to in demand tickets for this show',
+            nl: 'Er zijn Platinum tickets beschikbaar, dit zijn de best beschikbare zitplaatsen.' 
+
+         },
+
+         copy5: {
+
+            en: 'Tickets from [price]',
+            nl: 'Tickets vanaf [price]' 
+
+         },
+
+         getLoPri:function(price,lang) {
+            console.log('getLoPri');
+            if(lang == 'en') {
+               return this.copy5.en + ' £' + price;
+            }
+            else if(lang == 'nl') {
+               return this.copy5.nl + ' £' + price;
+            }
+
+         }
+
+        
+      }//translations
 
      
 
