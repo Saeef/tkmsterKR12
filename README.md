@@ -180,6 +180,7 @@ sonoio22
 
 
 
+<<<<<<< HEAD
 
 
 assets:
@@ -269,5 +270,11 @@ layer {
 
 
 
+
+
+REMAINS:
+IMAGE/ASSETS
+ONE TRANSLATION MISSING
+THERE'S NO MOBILE LAYOUT/DESIGN
 
 

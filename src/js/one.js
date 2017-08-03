@@ -51,6 +51,7 @@
             if(secErr) {
                secErr.innerHTML = '';
                secErr.id = 'notiks';
+<<<<<<< HEAD
 
                if(window.location.href.indexOf('language=en-us') > -1) {
 
@@ -76,6 +77,12 @@
 
 
                
+=======
+               secErr.innerHTML = ' <div class="notikswrapper"><div class="notiksheader"><h3>'+ this.translations.title.en + '</h3><h4>'+ this.translations.subtitle.en +'</h4></div><div class="notiksrow uno"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="'+ this.translations.copy2.en +'" /><p>'+ this.translations.copy1.en  +'</p><a href="' + l1.href + '" target="_blank" title="View Other Dates"><button id="notiksbone" type="button">'+ this.translations.copy2.en +' &rsaquo;</button></a></div><div class="notiksrow dos"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="' + this.translations.cta1.en + '" /><p>' + this.translations.copy4.en + '<br/><span id="platmin">Tickets from £120.00</span></p><a href="' + l2 + '" target="_blank" title="' + this.translations.cta1.en + '"><button id="notiksbtwo" type="button">' + this.translations.cta1.en + ' &rsaquo;</button></a></div><div class="notiksrow tres"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="' + this.translations.cta3.en +'" /><p>' + this.translations.copy3.en +'<br /><span id="resmin">Tickets from £100.00</span></p><a href="' + l3 +'" target="_blank" title="' + this.translations.cta3.en +'"><button id="notiksbthree" type="button">' + this.translations.cta3.en +'</button></a></div></div>  ';
+               //add-uno
+               uno = document.querySelector('.notiksrow.uno');
+               uno.classList.add('isOn');
+>>>>>>> 0323cb32fec052bcbceb223721fe97da07e18c31
 
             }//if-secError
 
@@ -112,9 +119,17 @@
                var sergeant = this;
                return sergeant.replace(new RegExp(seek, 'g'), destroy);
 
+<<<<<<< HEAD
             };    
+=======
+      translations: {
+         title: {
+>>>>>>> 0323cb32fec052bcbceb223721fe97da07e18c31
 
+            en: 'Tickets Unavailable',
+            nl: 'Helaas, er zijn geen tickets meer beschikbaar.' 
 
+<<<<<<< HEAD
             //language event-listener
             document.querySelector('.toplinks__button--language').
             addEventListener('click', function(e) {
@@ -129,6 +144,93 @@
                         var grab = document.getElementById('notiks');
                         grap.innerHTML = '';
                         grab.innerHTML = '<div class="notikswrapper"><div class="notiksheader"><h3>'+ this.translations.title.nl + '</h3><h4>'+ this.translations.subtitle.nl +'</h4></div><div class="notiksrow uno"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="'+ this.translations.copy2.nl +'" /><p>'+ this.translations.copy1.nl  +'</p><a href="' + l1.href + '" target="_blank" title="View Other Dates"><button id="notiksbone" type="button">'+ this.translations.copy2.nl +' &rsaquo;</button></a></div><div class="notiksrow dos"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="' + this.translations.cta1.nl + '" /><p>' + this.translations.copy4.nl + '<br/><span id="platmin">Tickets from £120.00</span></p><a href="' + l2 + '" target="_blank" title="' + this.translations.cta1.nl + '"><button id="notiksbtwo" type="button">' + this.translations.cta1.nl + ' &rsaquo;</button></a></div><div class="notiksrow tres"><img src="http://lorempixel.com/400/200/sports/" width="90px" height="auto" alt="' + this.translations.cta3.nl +'" /><p>' + this.translations.copy3.nl +'<br /><span id="resmin">Tickets from £100.00</span></p><a href="' + l3 +'" target="_blank" title="' + this.translations.cta3.nl +'"><button id="notiksbthree" type="button">' + this.translations.cta3.nl +'</button></a></div></div>  ';
+=======
+         },
+
+         subtitle: {
+
+            en: 'We can still get you in...',
+            nl: 'We kunnen je nog steeds aan tickets helpen!' 
+
+         },
+
+         copy1: {
+
+            en: 'These are regular tickets available for this event on another date.',
+            nl: 'xxxxxxxxxxxxxxxxxx' 
+
+         },
+
+         cta1: {
+
+            en: 'View Platinum Tickets',
+            nl: 'Bekijk Platinum Tickets' 
+
+         },
+
+         copy2: {
+
+            en: 'View Other Dates',
+            nl: 'Bekijk Andere Datum ' 
+
+         },
+
+         cta2: {
+
+            en: 'We can still get you in...',
+            nl: 'We kunnen je nog steeds aan tickets helpen!' 
+
+         },
+
+         copy3: {
+
+            en: 'There are resale tickets available through our Official Resale Marketplace: Seatwave',
+            nl: 'Er zijn tweedehands tickets beschikbaar op ons officiële marktplaats Seatwave.' 
+
+         },
+
+         cta3: {
+
+            en: 'View Resale Tickets',
+            nl: 'Bekijk Seatwave Tickets' 
+
+         },
+
+         cta4: {
+
+            en: 'Continue to Platinum',
+            nl: 'Ga naar Platinum Tickets  ' 
+
+         },
+
+         copy4: {
+
+            en: 'Platinum tickets are available, giving you access to in demand tickets for this show',
+            nl: 'Er zijn Platinum tickets beschikbaar, dit zijn de best beschikbare zitplaatsen.' 
+
+         },
+
+         copy5: {
+
+            en: 'Tickets from [price]',
+            nl: 'Tickets vanaf [price]' 
+
+         },
+
+         getLoPri:function(price,lang) {
+            console.log('getLoPri');
+            if(lang == 'en') {
+               return this.copy5.en + ' £' + price;
+            }
+            else if(lang == 'nl') {
+               return this.copy5.nl + ' £' + price;
+            }
+
+         }
+
+        
+      }//translations
+>>>>>>> 0323cb32fec052bcbceb223721fe97da07e18c31
 
                      }//if dootch-land   
 
