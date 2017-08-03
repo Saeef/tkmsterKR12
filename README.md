@@ -177,3 +177,97 @@ Qp9pCscst3YGBeAopoctAaJUMDtUqMFA
 stliss@redeye
 stefano22
 sonoio22
+
+
+
+
+
+assets:
+
+outer bg 
+background-color: #dfe4e7;
+
+inner bg
+background-color: #f6f7f9;
+
+
+rectangle:
+ background-color: #dfe4e7;
+
+ width:235px
+ height:108px;
+
+
+title: TMSans-Bold
+letter spacing .4px
+
+
+
+ticketmaster logo
+<img src="img/tmint-brandmark-white-cmyk.png"
+     srcset="img/tmint-brandmark-white-cmyk@2x.png 2x,
+             img/tmint-brandmark-white-cmyk@3x.png 3x"
+     class="TMINT-Brandmark-White-CMYK">
+
+ticketplatinum
+
+<img src="img/tmint-brandmark-white-cmyk.png"
+     srcset="img/tmint-brandmark-white-cmyk@2x.png 2x,
+             img/tmint-brandmark-white-cmyk@3x.png 3x"
+     class="TMINT-Brandmark-White-CMYK">
+
+seatwave
+
+<img src="img/grey.png"
+     srcset="img/grey@2x.png 2x,
+             img/grey@3x.png 3x"
+     class="grey">
+
+
+
+button
+
+.BG {
+  width: 255px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #009cde;
+}
+
+layer {
+  width: 186px;
+  height: 22px;
+  font-family: TMSans;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.38;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #ffffff;
+}
+
+//ARROW
+
+<img src="img/chevron.png"
+     srcset="img/chevron@2x.png 2x,
+             img/chevron@3x.png 3x"
+     class="chevron">
+
+     .chevron {
+        width: 9px;
+        height: 14px;
+        object-fit: contain;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
