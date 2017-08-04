@@ -261,10 +261,23 @@ layer {
       }
 
 
+//anchr.io api
+
+//tkmaster
+https://anchr.io/#/image/vgTI5.png
+
+//platinum
+https://anchr.io/#/image/0KsKq.png
+
+//seatwave
+https://anchr.io/#/image/Czu5B.png
 
 
 
-
+Link                                Description                   Date
+https://anchr.io/#/image/ADMOZ.png  tkmaster seatwave logo        Aug 4, 2017 3:56 AM 
+https://anchr.io/#/image/VYRP7.png  ticket master platinum logo   Aug 4, 2017 3:56 AM 
+https://anchr.io/#/image/IKMSf.png  ticketmaster logo             Aug 4, 2017 3:55 AM
 
 
 
