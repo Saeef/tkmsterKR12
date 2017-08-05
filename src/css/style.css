@@ -150,6 +150,14 @@ a:focus, a:active {
     width: 200px;
 }
 
+
+span.rearrow {
+  background-image: url("https://anchr.io/i/gCcvj.gif");
+  display: inline-block;
+  border:3px solid red;
+}
+
+
 @media only screen and (min-width:1070px ) and (max-width: 1210px) {
 .notiksrow p {max-width: 55%;}
 }
