@@ -29,14 +29,20 @@
 
 ### notes
 
+<br/>
+
+<kbd>preqa-desktop</kbd>  :rocket:     
+
+![](/src/images/desktop1.png) 
+
 
 <br/>
 
-<kbd></kbd>  :rocket:     
+<kbd>preqa-desktop</kbd>  :rocket:     
 
 ![](/src/images/logodesktop.png) 
 
 
-<kbd></kbd>  :rocket:     
+<kbd>preqa-mobile</kbd>  :rocket:     
 
 ![](/src/images/logomobile.png) 
