@@ -1,9 +1,9 @@
-(function(andRedEyelikeOptiblank, undefined) {
+(function(andRedEyelikeTKMSTR12, undefined) {
    var $ = window.jQuery;
    window.optimizely = window.optimizely || [];
    var SL = {};
 
-   SL.andRedEyelikeOptiblank = {
+   SL.andRedEyelikeTKMSTR12 = {
       init: function() { 
          console.info('%c init \u221a', 'background:blue;color:white;');
             this.pgCssDesktop();
@@ -183,11 +183,11 @@
    
 
 };
-//SL.andRedEyelikeOptiblank
+//SL.andRedEyelikeTKMSTR12
 (function _RE() {
    if (window.jQuery !== undefined) {
       //try         {
-                     SL.andRedEyelikeOptiblank.init();
+                     SL.andRedEyelikeTKMSTR12.init();
                   //} 
       //catch (err) {
                      //console.log('TRY ERROR: '+ err);
@@ -199,4 +199,4 @@
            
 })();//_RE
 
-}.call(window.andRedEyelikeOptiblank || {}));
+}.call(window.andRedEyelikeTKMSTR12 || {}));
