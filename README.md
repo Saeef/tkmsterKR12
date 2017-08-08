@@ -34,7 +34,7 @@
 
 <kbd></kbd>  :rocket:     
 
-![](/src/images/desktop.png) 
+![](/src/images/logodesktop.png) 
 
 
 <kbd></kbd>  :rocket:     
